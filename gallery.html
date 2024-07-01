@@ -1,0 +1,1251 @@
+<!-- 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+    <link rel="icon" type="image/android-chrome-512x512.png" href="android-chrome-512x512.png">
+    <script src="https://unpkg.com/swup@4"></script>
+    
+    <!-- <style>
+      *{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  box-shadow: "0px 4px 4px 0px #00000040,inset 0 0 0 1000px rgba(0,0,0,.5)"
+}
+
+main {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+}
+
+.item {
+  width: 200px;
+  height: 300px;
+  list-style-type: none;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+  background-position: center;
+  background-size: cover;
+  border-radius: 20px;
+  box-shadow: 0 20px 30px rgba(255,255,255,0.3) inset;
+  transition: transform 0.1s, left 0.75s, top 0.75s, width 0.75s, height 0.75s;
+
+  &:nth-child(1), &:nth-child(2) {
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    transform: none;
+    border-radius: 0;
+    box-shadow: none;
+    opacity: 1;
+  }
+
+  &:nth-child(3) { left: 50%; }
+  &:nth-child(4) { left: calc(50% + 220px); }
+  &:nth-child(5) { left: calc(50% + 440px); }
+  &:nth-child(6) { left: calc(50% + 660px); opacity: 0; }
+}
+
+.content {
+  width: min(30vw,400px);
+  position: absolute;
+  top: 50%;
+  left: 3rem;
+  transform: translateY(-50%);
+  font: 400 0.85rem helvetica,sans-serif;
+  color: white;
+  background:  rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  padding: 10px;
+  text-shadow: 0 3px 8px rgba(0,0,0,0.5);
+  opacity: 0;
+  display: none;
+
+  & .title {
+    font-family: 'arial-black';
+    text-transform: uppercase;
+  }
+
+  & .description {
+    line-height: 1.7;
+    margin: 1rem 0 1.5rem;
+    font-size: 0.8rem;
+  }
+
+  & button {
+    width: fit-content;
+    background-color: rgba(0,0,0,0.1);
+    color: white;
+    border: 2px solid white;
+    border-radius: 0.25rem;
+    padding: 0.75rem;
+    cursor: pointer;
+  }
+}
+
+.item:nth-of-type(2) .content {
+  display: block;
+  animation: show 0.75s ease-in-out 0.3s forwards;
+}
+.simple{
+  background-color: #7c3173;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 22px;
+  font-size: 15px;
+  color: white;
+  font-weight: bold;}
+.simple:hover{
+  border: 2px solid #ff96ad;
+  color: #ff96ad;
+  background-color: #17181c;
+}
+@keyframes show {
+  0% {
+    filter: blur(5px);
+    transform: translateY(calc(-50% + 75px));
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+.nav {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 5;
+  user-select: none;
+
+  & .btn {
+    background-color: rgba(255,255,255,0.5);
+    color: rgba(0,0,0,0.7);
+    border: 2px solid rgba(0,0,0,0.6);
+    margin: 0 0.25rem;
+    padding: 0.75rem;
+    border-radius: 50%;
+    cursor: pointer;
+
+    &:hover {
+      background-color: rgba(255,255,255,0.3);
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .content {
+    & .title        { font-size: 1rem; }
+    & .description  { font-size: 0.7rem; }
+    & button        { font-size: 0.7rem; }
+  }
+  .item {
+    width: 160px;
+    height: 270px;
+
+    &:nth-child(3) { left: 50%; }
+    &:nth-child(4) { left: calc(50% + 170px); }
+    &:nth-child(5) { left: calc(50% + 340px); }
+    &:nth-child(6) { left: calc(50% + 510px); opacity: 0; }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .content {
+    & .title        { font-size: 0.9rem; }
+    & .description  { font-size: 0.65rem; }
+    & button        { font-size: 0.7rem; }
+  }
+  .item {
+    width: 130px;
+    height: 220px;
+
+    &:nth-child(3) { left: 50%; }
+    &:nth-child(4) { left: calc(50% + 140px); }
+    &:nth-child(5) { left: calc(50% + 280px); }
+    &:nth-child(6) { left: calc(50% + 420px); opacity: 0; }
+  }
+}
+    </style>
+</head>
+   <body>
+    
+    <script>
+      const swup = new Swup();
+    </script>
+    <main> 
+        <ul class='slider'>
+          <li class='item' style="background-image: url('IMG_3724.jpeg')">
+            <div class='content'>
+              <h2 class='title'>Magical</h2>
+              <p class='description'> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Explicabo commodi doloremque itaque placeat. Sequi, impedit?  </p>
+            
+            </div>
+          </li>
+          <li class='item' style="background-image: url('co-gen\ jdw2.jpg')">
+            <div class='content'>
+              <h2 class='title'>"Building"</h2>
+              <p class='description'> <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Recusandae, dicta?</p>
+              <br>
+          
+            </div>
+          </li>
+          <li class='item' style="background-image: url('mehran\ uni.jpg')">
+            <div class='content'>
+              <h2 class='title'>"Construction</h2>
+              <p class='description'> "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Natus, quis. </p>
+          
+            </div>
+          </li>
+          <li class='item' style="background-image: url('sindh-assembly.jpg')">
+            <div class='content'>
+              <h2 class='title'>"Canal"</h2>
+              <p class='description'> Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores quas voluptas nulla.
+              </p>
+              
+            </div>
+          </li>
+          <li class='item' style="background-image: url('sugar1\ dewan.jpg')">
+            <div class='content'>
+              <h2 class='title'>"Ground"</h2>
+              <p class='description'>
+               Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magnam, totam.
+              </p>
+            
+            </div>
+          </li>
+        
+          
+        </ul>
+        <nav class='nav'>
+          <ion-icon class='btn prev' name="arrow-back-outline"></ion-icon>
+          <ion-icon class='btn next' name="arrow-forward-outline"></ion-icon>
+        </nav>
+      </main>
+
+        <script>
+          const slider = document.querySelector('.slider');
+
+function activate(e) {
+  const items = document.querySelectorAll('.item');
+  e.target.matches('.next') && slider.append(items[0]);
+  e.target.matches('.prev') && slider.append(items[items.ngth -1]);
+}
+ document.addEventListener('click',activate,false);
+
+        </script> -->
+
+        <!-- second gallery -->
+        <!-- <link
+  href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&display=swap"
+  rel="stylesheet" />
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/tw-elements/css/tw-elements.min.css" />
+<script src="https://cdn.tailwindcss.com/3.3.0"></script>
+<script>
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      fontFamily: {
+        sans: ["Roboto", "sans-serif"],
+        body: ["Roboto", "sans-serif"],
+        mono: ["ui-monospace", "monospace"],
+      },
+    },
+    corePlugins: {
+      preflight: false,
+    },
+  };
+</script>
+        <style>
+          @import url(https://fonts.bunny.net/css?family=amita:700);
+
+body {
+    background: url(https://res.cloudinary.com/ritalbradley/image/upload/v1657644013/pexels-elijah-o_donnell-3473569_o7ohfd.jpg)
+        center center/cover no-repeat;
+    min-height: 100vh;
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    color: #fefae0;
+    font-family: Amita;
+    margin: 20px auto;
+    width: 450px;
+    font-size: 3rem;
+    text-align: center;
+    border-bottom: 10px double #bc6c25;
+}
+
+img {
+    width: 450px;
+    height: 300px;
+    margin: 10px;
+    border: 10px solid #fefae0;
+    -webkit-filter: sepia(100%);
+    filter: sepia(100%);
+    transition-duration: 1s;
+}
+
+img:hover {
+    border: 5px solid #fff;
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+    -webkit-filter: none;
+    filter: none;
+}
+
+footer {
+    background-color: #bc6c25;
+    display: -webkit-flex;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 120px;
+    min-width: 190vw;
+}
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+::-webkit-scrollbar{
+    width: 0.7rem;
+}
+::-webkit-scrollbar-track{
+    background-color: rgb(52, 51, 51);
+}
+::-webkit-scrollbar-thumb{
+background-color: rgb(141, 141, 234);
+border-radius: 0.7rem;
+border: 0.5rem solid transparent;
+background-clip: inherit;
+height: 0.4rem;
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background-color: rgb(167, 180, 193);
+}
+::-webkit-scrollbar:horizontal{
+    background: rgb(141, 141, 234);
+    border-radius: 10px;
+    width: 0.5rem;
+    height: 0.4rem;
+}
+body{
+  overflow-x: hidden;
+}
+.simple{
+  background-color: #7c3173;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 22px;
+  padding-bottom: 8px;
+  padding-top: 88px;
+  font-size: 20px;
+  color: white;
+  font-weight: bold;
+ margin-top: 30px;
+margin-bottom: 3%;}
+.simple:hover{
+  border: 2px solid #ff96ad;
+  color: #ff96ad;
+  background-color: #17181c;
+}
+.button{
+margin: auto;
+display: block;
+}
+@media screen and (max-width: 768px) {
+  body{
+  padding-bottom: 0px;
+}
+  .simple{
+    margin-top: 20px;}
+  .button{
+    padding: 40px;
+  }
+.container{
+  margin-left: 10%;
+} }
+
+        </style>
+          <body>
+            <section>
+            <h1>Our Best Projects</h1>
+             
+            <div class="container">
+                <img src="IMG_3724.jpeg" alt="Data Darbar">
+                <img src="co-gen jdw2.jpg" alt="JDW Mill">
+                <img src="data darbar.webp" alt="Mehran Uni">
+                <img src="sindh-assembly.jpg" alt="Sindh-assembly">
+                <img src="sugar1 dewan.jpg" alt="Sugar dewan">
+                <img src="GHARO SOLAR.jpg" alt="Gharo Solar">
+            </div>
+
+            <button 
+  type="button"
+  class="inline-block rounded bg-primary px-6 pb-3 pt-3 ml-3 font-medium uppercase leading-normal text-white simple"><a href="index.html">Back &nbsp; ←</a>
+</button>
+
+            
+<button
+type="button"
+data-twe-ripple-init
+data-twe-ripple-color="light"
+class="!fixed bottom-5 end-5 hidden rounded-full bg-red-600 p-3 text-xs font-medium uppercase leading-tight text-white shadow-md transition duration-150 ease-in-out hover:bg-red-700 hover:shadow-lg focus:bg-red-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-red-800 active:shadow-lg"
+id="btn-back-to-top">
+<span class="[&>svg]:w-4">
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke-width="3"
+    stroke="currentColor">
+    <path
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      d="M4.5 10.5 12 3m0 0 7.5 7.5M12 3v18" />
+  </svg>
+</span>
+</button>
+
+
+  
+        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+        <script>
+          
+const mybutton = document.getElementById("btn-back-to-top");
+
+
+
+const scrollFunction = () => {
+  if (
+    document.body.scrollTop > 20 ||
+    document.documentElement.scrollTop > 20
+  ) {
+    mybutton.classList.remove("hidden");
+  } else {
+    mybutton.classList.add("hidden");
+  }
+};
+const backToTop = () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+};
+
+
+mybutton.addEventListener("click", backToTop);
+
+window.addEventListener("scroll", scrollFunction);
+        </script>
+        <script src="https://cdn.jsdelivr.net/npm/tw-elements/js/tw-elements.umd.min.js"></script>
+      </section>
+        <footer class="text-gray-400 bg-gray-900 body-font">
+          <div class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
+            <a class="flex title-font font-medium items-center md:justify-start justify-center text-white">
+              
+              <span class="ml-3 text-xl">Akbar & Associates</span>
+            </a>
+            <p class="text-sm text-gray-400 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-800 sm:py-2 sm:mt-0 mt-4">© 2000 Akbar & Associates
+              <a href="www.twitter.com" class="text-gray-500 ml-1" target="_blank" rel="noopener noreferrer"></a>
+            </p>
+            <span class="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
+              <a class="text-gray-400">
+                <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                  <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+                </svg>
+              </a>
+              <a class="ml-3 text-gray-400">
+                <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                  <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
+                </svg>
+              </a>
+              <a class="ml-3 text-gray-400">
+                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                  <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+                  <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
+                </svg>
+              </a>
+              <a class="ml-3 text-gray-400">
+                <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="0" class="w-5 h-5" viewBox="0 0 24 24">
+                  <path stroke="none" d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"></path>
+                  <circle cx="4" cy="4" r="2" stroke="none"></circle>
+                </svg>
+              </a>
+            </span>
+          </div>
+        </div>
+        </div>
+        </footer>
+</body>
+</html>  -->
+
+
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Gallery</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet"><link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto:400,400italic,500,500italic,700,700italic'><link rel="stylesheet" href="./style.css">
+
+</head>
+<style>
+  /* Try hovering and changing the height/width */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body,
+html {
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background: black;
+  margin: 0;
+}
+
+#mz-gallery-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+#mz-gallery {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  width: calc(100% - 70px);
+  height: calc(100% - 50px);
+  max-height: 670px;
+  max-width: 1900px;
+  margin: 35px 0px;
+  background-color: black;
+  background-image: radial-gradient(rgba(124, 252, 0, 0.4) 1px, black 1px);
+  background-size: 40px 40px;
+  /* border: 1px dotted rgba(124, 252, 0, 0.7);
+  outline: 1px dotted rgba(124, 252, 0, 0.7); */
+  outline-offset: 20px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  scroll-padding: 0 0 0 55px;
+  scroll-behavior: smooth;
+  /* firefox scrollbar */
+  scrollbar-color: rgb(141, 141, 234);
+  scrollbar-width: auto;
+  animation: background 300s linear infinite;
+}
+
+@keyframes background {
+  0% {
+    background-position: -300% 100%;
+  }
+  100% {
+    background-position: 100% -300%;
+  }
+}
+
+#mz-gallery::-webkit-scrollbar {
+  height: 25px;
+}
+
+#mz-gallery::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+#mz-gallery::-webkit-scrollbar-thumb {
+  background: #666;
+}
+
+#mz-gallery::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+#mz-gallery::-webkit-scrollbar-thumb:active {
+  background: #444;
+}
+
+#mz-gallery::-webkit-scrollbar-button:single-button:horizontal:decrement {
+  height: 25px;
+  width: 80px;
+  background-color: rgb(141, 141, 234);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-box-arrow-left' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M6 12.5a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-8a.5.5 0 0 0-.5.5v2a.5.5 0 0 1-1 0v-2A1.5 1.5 0 0 1 6.5 2h8A1.5 1.5 0 0 1 16 3.5v9a1.5 1.5 0 0 1-1.5 1.5h-8A1.5 1.5 0 0 1 5 12.5v-2a.5.5 0 0 1 1 0v2z'/%3E%3Cpath fill-rule='evenodd' d='M.146 8.354a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L1.707 7.5H10.5a.5.5 0 0 1 0 1H1.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3z'/%3E%3C/svg%3E");
+  background-size: 20px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#mz-gallery::-webkit-scrollbar-button:single-button:horizontal:increment {
+  height: 25px;
+  width: 80px;
+  background-color: rgb(141, 141, 234);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-box-arrow-right' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0v2z'/%3E%3Cpath fill-rule='evenodd' d='M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z'/%3E%3C/svg%3E");
+  background-size: 20px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#mz-gallery::-webkit-scrollbar-button:single-button:horizontal:decrement:hover,
+#mz-gallery::-webkit-scrollbar-button:single-button:horizontal:increment:hover {
+  background-color:  rgb(167, 180, 193);;
+}
+
+#mz-gallery::-webkit-scrollbar-button:single-button:horizontal:decrement:active,
+#mz-gallery::-webkit-scrollbar-button:single-button:horizontal:increment:active {
+  background-color:  rgb(167, 180, 193);;
+}
+
+#mz-gallery figure {
+  position: relative;
+  margin: unset;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 90%;
+  width: auto;
+  min-height: 100px;
+  margin-right: 60px;
+  scroll-snap-align: start;
+  transition: all 0.3s ease-in-out;
+}
+
+#mz-gallery figure:nth-child(1) {
+  margin-left: 60px;
+}
+
+#mz-gallery figure div {
+  position: absolute;
+  width: 1%;
+  height: 1%;
+  background: transparent;
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+}
+
+#mz-gallery figure div:nth-child(3) {
+  top: 0;
+  left: 0;
+  border-left: 1px dotted lawngreen;
+  border-top: 1px solid lawngreen;
+  border-radius: 15px 0px 0px 0px;
+}
+
+#mz-gallery figure div:nth-child(4) {
+  top: 0;
+  right: 0;
+  border-top: 1px solid white;
+  border-right: 1px solid white;
+  border-radius: 0px 15px 0px 0px;
+}
+
+#mz-gallery figure div:nth-child(5) {
+  bottom: 0;
+  right: 0;
+  border-right: 1px dotted lawngreen;
+  border-bottom: 1px solid lawngreen;
+  border-radius: 0px 0px 15px 0px;
+}
+
+#mz-gallery figure div:nth-child(6) {
+  bottom: 0;
+  left: 0;
+  border-bottom: 1px solid white;
+  border-left: 1px solid white;
+  border-radius: 0px 0px 0px 15px;
+}
+
+#mz-gallery figure img {
+  height: 100%;
+  width: auto;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
+    rgba(0, 0, 0, 0.22) 0px 10px 10px;
+  border-radius: 5px;
+  opacity: 0.9;
+  filter: brightness(1);
+  outline: 1px solid transparent;
+  outline-offset: -40px;
+  transition: all 0.3s ease-in-out;
+}
+
+#mz-gallery figure figcaption {
+  position: absolute;
+  color: transparent;
+  font-size:12pt;
+  line-height: 24pt;
+  font-weight: 500;
+  padding: 0px 20px;
+  text-align: center;
+  width: 50%;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(
+    rgba(124, 252, 0, 0.7) 1px,
+    rgba(0, 0, 0, 0.9) 1px
+  );
+  outline: 2px dotted transparent;
+  outline-offset: 0px;
+  background-size: 40px 40px;
+  opacity: 0;
+  border-radius: 100%;
+  pointer-events: none;
+  animation: background 100s linear infinite;
+  transition: all 0.3s ease-in-out;
+}
+
+#mz-gallery figure:hover img {
+  height: calc(100% - 40px);
+  filter: brightness(1.5);
+  border-radius: 10px;
+  outline: 1px solid rgba(255, 255, 255, 0.8);
+  outline-offset: 5px;
+  transition: all 0.3s ease-in-out;
+}
+
+#mz-gallery figure:hover {
+  padding: 0px 20px;
+}
+
+#mz-gallery figure:hover figcaption {
+  opacity: 0.8;
+  color: white;
+  outline: 1px solid lawngreen;
+  outline-offset: -20px;
+  text-shadow: 1px 1px 3px black, 0px 0px 5px black;
+  transition: all 0.3s ease-in-out;
+}
+
+#mz-gallery figure:hover div {
+  width: 25%;
+  height: 25%;
+  opacity: 1;
+  transition: all 0.3s ease-in-out;
+}
+
+@media (max-width: 1145px) {
+  #mz-gallery figure {
+    scroll-snap-align: center;
+  }
+  #mz-gallery {
+    scroll-padding: 0px 0px 0px 0px !important;
+  }
+}
+
+@media (max-width: 610px) {
+  #mz-gallery {
+    max-height: 320px;
+  }
+  #mz-gallery figure {
+    margin-right: 20px;
+  }
+  #mz-gallery figure:nth-child(1) {
+    margin-left: 20px;
+  }
+}
+
+@media (max-height: 425px) {
+  #mz-gallery figure figcaption {
+    font-size: 14pt;
+    line-height: 20pt;
+  }
+}
+
+@media (max-height: 340px) {
+  #mz-gallery {
+    background-size: 30px 30px;
+    scroll-padding: 0 0 0 28px;
+  }
+  #mz-gallery figure {
+    margin-right: 30px;
+  }
+  #mz-gallery figure:nth-child(1) {
+    margin-left: 30px;
+  }
+  #mz-gallery figure figcaption {
+    font-size: 12pt;
+    line-height: 18pt;
+    font-weight: 400;
+    background-size: 30px 30px;
+  }
+}
+
+@media (max-height: 280px) {
+  #mz-gallery::-webkit-scrollbar {
+    height: 20px;
+  }
+  #mz-gallery::-webkit-scrollbar-button:single-button:horizontal:decrement,
+  #mz-gallery::-webkit-scrollbar-button:single-button:horizontal:increment {
+    width: 80px;
+    height: 20px;
+    background-size: 15px;
+  }
+}
+
+@media (max-height: 230px) {
+  #mz-gallery figure figcaption {
+    font-size: 10pt;
+    line-height: 12pt;
+  }
+  #mz-gallery figure:hover figcaption {
+    outline-offset: -10px;
+  }
+  #mz-gallery figure:hover img {
+    outline-offset: 10px;
+  }
+}
+
+@media (max-height: 165px) {
+  #mz-gallery {
+    scroll-padding: 0 0 0 18px;
+    margin: 0px;
+  }
+  #mz-gallery figure {
+    margin-right: 20px;
+  }
+  #mz-gallery figure:nth-child(1) {
+    margin-left: 20px;
+  }
+}
+
+/* touch screen devices */
+
+@media (pointer: coarse) {
+  #mz-gallery * {
+    pointer-events: none;
+  }
+  #mz-gallery::-webkit-scrollbar {
+    height: 35px;
+  }
+  #mz-gallery {
+    scroll-snap-type: unset;
+    scroll-padding: unset;
+    scroll-behavior: unset;
+  }
+  #mz-gallery figure {
+    scroll-snap-align: unset;
+  }
+  #mz-gallery figure figcaption {
+    width: 100%;
+    height: 30%;
+    bottom: 0;
+    opacity: 1;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    animation: unset;
+    border-radius: 0;
+    padding: 0px 15px;
+    border-top: 1px solid lawngreen;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .simple{
+    margin-top: 20px;
+  }
+  .button{
+    padding: 40px;
+  } }
+  body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0px;
+}
+
+nav ul li {
+    --c: goldenrod;
+    color: var(--c);
+    font-size: 16px;
+    border: 0.3em solid var(--c);
+    border-radius: 0.5em;
+    width: 12em;
+    height: 3em;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-family: sans-serif;
+    letter-spacing: 0.1em;
+    text-align: center;
+    line-height: 3em;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    transition: 0.5s;
+    margin: 0.5em;
+}
+
+nav ul li span {
+    position: absolute;
+    width: 25%;
+    height: 100%;
+    background-color: var(--c);
+    transform: translateY(150%);
+    border-radius: 50%;
+    left: calc((var(--n) - 1) * 25%);
+    transition: 0.5s;
+    transition-delay: calc((var(--n) - 1) * 0.1s);
+    z-index: -1;
+}
+
+nav ul li:hover {
+    color: black;
+}
+
+nav ul li:hover span {
+    transform: translateY(0) scale(2);
+}
+
+nav ul li span:nth-child(1) {
+    --n: 1;
+}
+
+nav ul li span:nth-child(2) {
+    --n: 2;
+}
+
+nav ul li span:nth-child(3) {
+    --n: 3;
+}
+
+nav ul li span:nth-child(4) {
+    --n: 4;
+}
+
+</style>
+
+<body>
+  <div id="mz-gallery">>
+          
+    <figure>
+      <img src="Artistic K10 - 3D Modelling.jpg" width="700" height="700">
+      <figcaption>Artistic K10 - 3D Modelling</figcaption>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </figure>
+
+    <figure>
+      <img src="Cone Dyeing- Shafi Texcel.jpg" alt="giki" width="700" height="700">
+      <figcaption>Cone Dyeing- Shafi Texcel</figcaption>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </figure>
+
+    <figure>
+      <img src="bahria town 2.jpg" alt="City Towers" width="700" height="700">
+      <figcaption>Bahria Town Tower 2 </figcaption>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </figure>
+
+   
+
+    <figure>
+      <img src="co-gen jdw2.jpg" alt="co-gen" width="700" height="700">
+      <figcaption>JDW Sugar Mills-Conveyor System</figcaption>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </figure>
+
+    <figure>
+      <img src="Picture3.jpg" alt="Pta2" width="700" height="700">
+      <figcaption>Pakistan Telecommunication authority Building </figcaption>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </figure>
+
+    <figure>
+      <img src="rooftop.jpeg" alt="Foggy Mountains" width="700" height="700">
+      <figcaption> Faisal Weaving Mills - Mosque </figcaption>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </figure>
+
+    <figure>
+      <img src="OCL2.jpeg" alt="Dense Forest" width="700" height="700">
+      <figcaption>Olympia Chemicals Soda Ash Plant</figcaption>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </figure>
+
+   
+
+    <figure>
+      <img src="OCL5.jpeg" alt="SUV in Front of Building" width="700" height="700">
+      <figcaption>Olympia Chemicals Soda Ash Plant</figcaption>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </figure>
+
+    <figure>
+      <img src="UBW Front View.png" alt="Classic Vehicle" width="700" height="700">
+      <figcaption>Universal Brush Wares</figcaption>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </figure>
+
+    <figure>
+      <img src="Mehran University  (2).jpg" alt="mehran university" width="700" height="700">
+      <figcaption>Mehran University of Engineering & Technology</figcaption>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </figure>
+
+    <figure>
+      <img src="SIUT Sukkar 2.jpg" alt="Brick Wall" width="700" height="700">
+      <figcaption>Sindh Institute Of Urology And Transplantation</figcaption>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </figure>
+
+    <figure>
+      <img src="Picture6.jpg" alt="Waterfront" width="700" height="700">
+      <figcaption>Ghulam Ishaq Khan Institute</figcaption>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </figure>
+
+    <figure>
+      <img src="Quaid-e-Awam University.jpg" alt="Overgrown Buildings" width="700" height="700">
+      <figcaption>Quaid-e-Awam University</figcaption>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </figure>
+
+   
+
+    <figure>
+      <img src="OCL3.jpeg" alt="Sunset Over Mountains" width="700" height="700">
+      <figcaption>Olympia Chemicals Carbonation Building</figcaption>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </figure>
+
+    <figure>
+      <img src="sindh-assembly.jpg" alt="Ocean View" width="700" height="700">
+      <figcaption>New Sindh Assembly</figcaption>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </figure>
+
+    <figure>
+      <img src="weaving machinery layout.jpeg" alt="Classic Vehicle" width="700" height="700">
+      <figcaption>Weaving Machinery Layout</figcaption>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </figure>
+
+    <figure>
+      <img src="construction13.jpeg" width="700" height="700">
+      <figcaption>Construction </figcaption>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </figure>
+
+    <figure>
+      <img src="orient.JPG" width="700" height="700">
+      <figcaption>Orient Textile Mill</figcaption>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </figure>
+
+    <figure>
+      <img src="Lucky Dye House.jpg" width="700" height="700">
+      <figcaption>Lucky Group - Dye House</figcaption>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </figure>
+
+    <figure>
+      <img src="construction14.jpeg" width="700" height="700">
+      <figcaption>Lucky Group - Clarifier Tank </figcaption>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </figure>
+
+    <figure>
+      <img src="QUEST Central Library.jpg" width="700" height="700">
+      <figcaption>Quaid-e-Awam Central Library</figcaption>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </figure>
+
+    <figure>
+      <img src="Gharo Solar 2.jpg" width="700" height="700">
+      <figcaption>Gharo Solar</figcaption>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </figure>
+
+
+    <figure>
+      <img src="Karachi Grains4.jpg" width="700" height="700">
+      <figcaption>Karachi Grains</figcaption>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </figure>
+
+    <figure>
+      <img src="Master Layout - Lucky Kathore.jpg" width="700" height="700">
+      <figcaption>Master Planning</figcaption>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </figure>
+
+    <figure>
+      <img src="Picture9.jpg" width="700" height="700">
+      <figcaption>Data Darbar Ext</figcaption>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </figure>
+
+    <figure>
+      <img src="Fatima Fertilizer 1.jpeg" width="700" height="700">
+      <figcaption>Fatima Fertilizer</figcaption>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </figure>
+
+    <!-- <figure>
+      <img src="top.jpeg" width="700" height="700">
+      <figcaption>Ijtimah Gah </figcaption>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </figure> -->
+
+    <figure>
+      <img src="new.jpeg" width="700" height="700">
+      <figcaption>Marine International Liquid Terminal </figcaption>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </figure>
+  </div>
+
+  
+
+</div>
+<nav>
+<ul>
+  <li> <a href="index.html" style="color: whitesmoke; text-decoration: none; nav ul li:hover {
+    color: black;
+}">Home
+    <span></span><span></span><span></span><span></span></a>
+  </li></ul></nav></a>
+<!-- partial -->
+ 
+  
+</body>
+</html>

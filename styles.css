@@ -1,0 +1,565 @@
+
+*{
+  font-family: "Lexend", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 560;
+  font-style: normal;}
+  * {box-sizing:border-box}
+
+  .seacap{
+    border-radius: 50%;
+    width: 50%;
+    height: 50%;
+  }
+.bigtxt{
+  font-size: xx-large;
+  font-weight: 600;
+  text-decoration: underline;
+  text-overflow: ellipsis;
+  margin-top: -20px;
+}
+  .bigtxtt{
+    font-size: xx-large;
+    text-decoration: underline;
+  }
+
+  .construct{
+    text-align: center;
+    align-content: center;
+  }
+
+.transition-fade{
+opacity: 1;
+transition: 500ms;
+transform: translateX(0);
+transform-origin: left;
+}
+html.is-animating .transition-fade{
+    opacity: 1;
+    transform: translateX(100%);
+}
+
+html.isleavinng .transition-fade{
+    opacity: 0;
+}
+.rup{
+  font-size: x-large;
+}
+.ran{
+  font-size: 16px;
+  padding: 24px;
+  margin-top: 20px;
+}
+.text{
+    padding: 5%;
+}
+::-webkit-scrollbar{
+    width: 0.7rem;
+}
+::-webkit-scrollbar-track{
+    background-color: rgb(52, 51, 51);
+}
+::-webkit-scrollbar-thumb{
+background-color: rgb(141, 141, 234);
+border-radius: 0.7rem;
+border: 0.5rem solid transparent;
+background-clip: inherit;
+height: 0.4rem;
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background-color: rgb(167, 180, 193);
+    scroll-behavior: smooth;
+}
+::-webkit-scrollbar:horizontal{
+    background: rgb(141, 141, 234);
+    border-radius: 10px;
+    width: 0.5rem;
+    height: 0.4rem;
+   scroll-behavior: smooth;
+}
+.loader-container{
+    position: fixed;
+    inset: 0;
+    z-index: 999;
+    background-color: #0c0603;
+    display: grid;
+    place-content: center;
+}
+
+.loader{
+    width: 4rem;
+    height: 4rem;
+    border: .4rem solid #f27541;
+    border-left-color: transparent;
+    border-right-color: transparent;
+    border-radius: 50%;
+    animation: .8s ease infinite alternate spinner;
+    }
+    .loader-container.hidden{
+        opacity: 0;
+        visibility: hidden;
+    }
+    #page-content{
+        opacity: 0;
+        transform: translate(0,-1rem,0);
+    }
+    
+    #page-content.visible{
+        opacity: 1;
+        transform: translate3d(0,0,0);
+    }
+
+
+@keyframes spinner {
+    from{
+        transform: rotate(0deg)scale(1);
+    }
+    to{
+        transform: rotate(1turn) scale(1.2);
+    }
+}
+.carousel-container {
+    position: relative;
+    max-width: 100%;
+    overflow: hidden;
+    height: 430px; /* Default height */
+    margin-right: 40px;
+    margin-left: 40px;
+    margin-top: 30px;
+    border-radius: 50px;
+  }
+  
+  .carousel {
+    display: flex;
+    height: 100%; /* Ensure the carousel fills its container */
+   
+
+  }
+  
+  .carousel-item {
+    flex: 0 0 auto;
+    width: 100%;
+    transition: transform 0.5s ease;
+  }
+  
+  .carousel-item img {
+    width: 100%;
+    height: 100%; /* Ensure the image fills its container */
+  }
+  
+  .prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(54, 53, 53, 0.87); 
+    border: none;
+    border-radius: 50%;
+    color: rgb(56, 107, 201);
+    cursor: pointer;
+    padding: 8px;
+    z-index: 3;
+    transition: background-color 0.2s ease;
+  }
+  
+  .prev:hover, .next:hover {
+    background-color: rgba(214, 214, 213, 0.858);
+  }
+  
+  .prev, .next {
+    content: "";
+    position: absolute;
+    border: solid 2px rgb(43, 43, 43);
+    border-width: 0 px 4px 0;
+    padding: 13px;
+    transition: transform 0.2s ease; /* Transition for rotation */
+  }
+  
+  .prev::after {
+    transform: rotate(-45deg);
+  }
+  
+  .next::after {
+    transform: rotate(135deg);
+  }
+  
+  .prev:hover::after, .next:hover::after {
+    transform: scale(1.2); /* Scale on hover */
+  }
+  
+  .prev {
+    left: 0;
+  }
+  
+  .next {
+    right: 0;
+  }
+  
+  ol li {
+    list-style-type: decimal;
+    display: list-item;
+    }
+  
+  /* Media Query for smaller screens */
+  @media only screen and (max-width: 768px) {
+    .carousel-container {
+      height: 260px; /* Reduce height for smaller screens */
+      margin: 0px;
+      margin-top: 20px;
+      border-radius: 0px;
+    }
+  
+    .prev, .next {
+      display: block; /* Show arrows for smaller screens */
+    }
+  
+    .prev {
+      left: 0;
+    }
+  
+    .next {
+      right: 0;
+    }
+  }
+
+  .navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333; /* Background color of the navbar */
+  }
+  
+  .navbar li {
+    float: left;
+  }
+  
+  .navbar li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  .navbar li a:hover {
+    background-color: #ddd; /* Background color on hover */
+    color: #333; /* Text color on hover */
+  }
+  
+  .dropdown {
+    display: inline-block;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9; /* Background color of the dropdown content */
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown-content a:hover {
+    background-color: #ddd; /* Background color on hover */
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+  /* Responsive Styles */
+  @media screen and (max-width: 768px) {
+    .navbar li {
+      float: none;
+      display: block;
+      text-align: center;
+    }
+  
+    .navbar li a, .dropdown-content a {
+      padding: 10px;
+    }
+  
+    .dropdown-content {
+      position: relative;
+      width: 100%;
+    }
+  }
+  button{
+    /* padding: 10px 7px 10px 7px;
+    border: #0c0603;
+    border: solid 2px; */
+    border: none;
+    position: relative;
+    transition: .4s ease-in;
+    z-index: 1;
+  }
+  button::before,
+  button::after {
+    position: absolute;
+    content: "";
+    z-index: -1;
+  }
+
+  /* .simple::after{
+    height: 100%;
+    left:-35%;
+    top: 0;
+    transform: skew(50deg);
+    transition-duration: 0.6s;
+    transform-origin: top left;
+    width: 0;
+  } */
+  /* .simple:hover::after{
+    background: #ff96ad;
+  height: 100%;
+width: 135%;} */
+.simple{
+  background-color: #7c3173;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 22px;
+  font-size: 15px;
+  color: white;
+  font-weight: bold;}
+.simple:hover{
+  border: 2px solid #ef8c12;
+  color: #f7bb08;
+  background-color: #17181c;
+}
+    
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.sticky + .content {
+  padding-top: 60px;
+}
+
+/* Default styles for larger screens */
+header {
+  width: 100%;
+  /* Add other styles for desktop version */
+}
+
+nav {
+  white-space: nowrap;
+}
+
+nav a {
+  display: inline-block;
+  /* Add other styles for the links */
+}
+
+
+/* Media query for viewports 768px and smaller */
+@media screen and (max-width: 768px) {
+  header {
+    width: 100%;
+    /* Add other styles for mobile version */
+  }
+
+  nav a {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   margin-left: 30px;
+  }
+  .simple{
+    margin-top: 20px;
+  }
+  .button{
+    padding: 40px;
+  }
+  .sir{
+    width: 48%;
+    height: 47%;
+  }
+  .sir2{
+    width: 50%;
+    height: 42%;
+    margin-right: 30px;
+  }
+  .bigtxt{
+    margin-top: 20px;
+
+  }
+  .map2{
+    visibility: hidden;
+  }
+  .casual{
+    margin-top: 30px;
+  }
+  .silk{
+    margin-top: 4px;
+  }
+  .mope{
+   visibility: hidden;
+  }
+  .mopping{
+    margin-left: -40px;
+  }
+}
+
+
+
+/* .brand{
+  margin-left: -40px;
+  padding-top: 5px;
+}
+.logo{
+  border-radius: 100%;
+  float: left;
+  margin-left:-130px;
+  margin-top: 5px;
+  margin-bottom: -3px;
+} */
+
+.dropdown {
+  position: relative;
+  display: flex;
+  
+}
+
+/* Dropdown Button */
+.dropdown .dropbtn {
+  margin-top: -0.5px;
+  cursor: pointer;
+  border-radius: 4px;
+
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 40px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  border-radius: 4px;
+  left: 0;
+  top: 100%;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: bold;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: burlywood;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Change color of dropdown button on hover */
+/* .dropdown:hover .dropbtn {
+  background-color: fu;
+} */
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+
+  .dropdown .dropbtn {
+    padding: 8px;
+    font-size: 15px;
+    margin: 9px 14px 10px 10px;
+  }
+
+  .dropdown-content {
+    width: 93px;
+    background-color: whitesmoke;
+    margin-right: 100%;
+  }
+
+  .dropdown-content a {
+    padding-right: 80%;
+    margin-left: 5px;
+    padding-left: 0;
+    font-size: large;
+    
+  }
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  /* .btn-primary {
+      @apply py-1.5 px-3 text-center bg-blue-700 rounded-md text-white;
+  } */
+}
+
+.card {
+  width: 100%;
+  max-width: 300px; /* Adjust maximum width as needed */
+  margin: 10px auto;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1;
+}
+
+.expanded-picture-container {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  max-width: 100%;
+  max-height: 90%;
+  overflow: auto;
+}
+
+.expanded-picture {
+  width: 100%;
+  height: auto;
+  
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  color: black;
+  font-size: 27px;
+ 
+}
+.close-btn:hover{
+  color: whitesmoke;
+  transform: translatey(2.7px);
+}
